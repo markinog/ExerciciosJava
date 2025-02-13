@@ -1,10 +1,14 @@
 package com.agibank.TryCatch.S4;
 
+import java.util.Locale;
+
 public class ex3 {
     public static void main(String[] args) {
 
+        Locale.setDefault(Locale.US);
+
         double[][] matrizRiscos = {
-                {0.2, 0.5, 1.1, 0.4, 0.3},
+                {0.2, 0.5, 1.0, 0.4, 0.3},
                 {0.7, 0.9, 0.1, 0.6, 0.8},
                 {0.0, 0.0, 0.0, 0.0, 0.0},
                 {0.0, 0.0, 0.0, 0.0, 0.0},
@@ -35,9 +39,16 @@ public class ex3 {
                         System.out.println();
                         throw new Exception("\nOs valores da matriz devem estar entre 0 e 1!");
                     }
-
-
                 }
+            }
+
+            for (int i = 0; i < riscos.length; i++) {
+                for (int j = 0; j < riscos[i].length; j++) {
+
+
+                    System.out.printf("%.1f | ", riscos[i][j]);
+                }
+                System.out.println();
             }
 
         }catch(ArrayIndexOutOfBoundsException e){
